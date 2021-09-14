@@ -23,11 +23,11 @@ class ViewController: UIViewController {
  
     @IBAction func keyPresed(_ sender: UIButton) {
         print(sender.currentTitle)
-        playSound(name: sender.currentTitle)
+        playSound(name: sender.currentTitle!)
     }
     
     func playSound(name: String) {
-            let url = Bundle.main.url(forResource: "C", withExtension: "wav")
+            let url = Bundle.main.url(forResource: name, withExtension: "wav")
             player = try! AVAudioPlayer(contentsOf: url!)
             player!.play()    }
 }
