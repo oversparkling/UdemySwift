@@ -24,6 +24,10 @@ class ViewController: UIViewController {
     @IBAction func keyPresed(_ sender: UIButton) {
         print(sender.currentTitle)
         playSound(name: sender.currentTitle!)
+        sender.alpha = 0.5;
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { // Change `2.0` to the desired number of seconds.
+            sender.alpha = 1;
+        }
     }
     
     func playSound(name: String) {
